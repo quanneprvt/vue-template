@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue_template_app
 
 ## Project setup
@@ -27,3 +28,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# vue-template
+>>>>>>> 336bd2b3e026f8e088fa2c0747fc31e60cd77a82
