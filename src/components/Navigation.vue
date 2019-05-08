@@ -9,7 +9,7 @@
   </div> -->
 
   <v-toolbar height='50vw' color='transparent' scroll-off-screen>
-    <v-toolbar-side-icon v-on:click='drawer = !drawer'></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click.stop='toggleDrawer()'></v-toolbar-side-icon>
     <v-toolbar-title>Title</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
@@ -32,7 +32,7 @@ export default {
   name: 'Navigation',
   data() {
     return {
-      drawer: null,
+      showDrawer: true,
       links: [
         {
           id: 0,
@@ -55,7 +55,11 @@ export default {
   methods:{
     redirectLink(link){
       this.$router.push(link);
-    }
+    },
+    toggleDrawer()
+    {
+      this.$emit('toggledDrawer');
+    },
   }
 }
 </script>

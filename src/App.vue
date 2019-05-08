@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Drawer></Drawer>
-    <Navigation></Navigation>
+    <!-- <div class='debug'>{{showDrawer}}</div> -->
+    <Drawer :drawer=showDrawer @toggledDrawer='showDrawer = $event'></Drawer>
+    <Navigation @toggledDrawer='showDrawer = !showDrawer'></Navigation>
     <router-view/>
   </div>
 </template>
@@ -16,7 +17,7 @@ export default {
   name: 'app',
   data() {
     return {
-      drawer: Navigation.data.drawer,
+      showDrawer: false,
     }
   },
   components: {

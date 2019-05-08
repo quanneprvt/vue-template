@@ -1,6 +1,6 @@
 <template>
 
-<v-navigation-drawer absolute temporary v-model='drawer'>
+<v-navigation-drawer absolute temporary v-model="_drawer">
     <v-list class="pa-1">
         <v-list-tile avatar>
             <v-list-tile-avatar>
@@ -36,9 +36,7 @@
 <script>
   export default {
     name:'Drawer',
-    props:{
-        drawer: null,
-    },
+    props:['drawer'],
     data () {
       return {
         items: [
@@ -46,6 +44,16 @@
           { title: 'About', icon: 'question_answer' }
         ]
       }
+    },
+    computed:{
+        _drawer:{
+            get(){
+                return this.drawer;
+            },
+            set(v){
+                this.$emit('toggledDrawer', v);
+            },
+        }
     }
   }
 </script>
