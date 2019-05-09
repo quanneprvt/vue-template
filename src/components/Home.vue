@@ -2,40 +2,26 @@
   <div>
     <img class ='main-img' src="../assets/homebg.jpg"/>
     <div class='thumb-panel'>
-      <v-container grid-list-xl>
-        <v-layout wrap>
-          <v-flex
-            v-for="elevation in elevations"
-            :key="elevation"
-            xs7
-            md4
-            class="thumb-item"
-          >
-            <v-sheet
-              class='pa-4'
-              color="grey lighten-3"
-            >
-              <v-sheet
-                :elevation="elevation"
-                class="mx-auto"
-                height="10vw"
-                width="10vw"
-              ></v-sheet>
-            </v-sheet>
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <SheetHeader></SheetHeader>
     </div>
+    <div class='intro-title'>
+      <h2 style="padding: 15px">Template Test Vue App</h2>
+      <h4 style="font-weight: 200">Sub title for page</h4>
+    </div>
+    <MainContent></MainContent>
   </div>
 </template>
 
 <script>
+
+import SheetHeader from './HomeComponents/SheetHeader'
+import MainContent from './HomeComponents/MainContent'
+
 export default {
   name: 'Home', //this is the name of the component
-  data() {
-    return {
-      elevations: [6, 12, 18],
-    }
+  components:{
+    SheetHeader,
+    MainContent,
   }
 }
 </script>
@@ -44,10 +30,6 @@ export default {
 
 .thumb-panel{
   background-color:whitesmoke;
-}
-
-.thumb-item{
-  margin: auto;
 }
 
 .main-img{
